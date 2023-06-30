@@ -89,7 +89,7 @@ text2_Email = Entry(width=30,
 text2_Email.grid(column=1, row=2)
 text2_Email.focus_set()
 
-text3_password = Entry(width=20,
+text3_password = Entry(width=30,
                        bg="white",
                        fg="black",
                        highlightthickness=0,
