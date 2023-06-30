@@ -27,6 +27,13 @@ def generate():
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
+def add():
+    with open("Passwords.txt", "a") as file:
+        website_to_save = text1_Website.get()
+        email_to_save = text2_Email.get()
+        password_to_save = text3_password.get()
+        file.write(f"{website_to_save} | {email_to_save} | {password_to_save}\n")
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -54,7 +61,8 @@ label1_website.grid(column=0, row=1)
 label2_Email = Label(text="Email/User:",
                      bg="white",
                      fg="black",
-                     font=("Courier", 20))
+                     font=("Courier", 20),
+                     )
 label2_Email.grid(column=0, row=2)
 
 label3_Password = Label(text="Password:",
@@ -67,7 +75,8 @@ text1_Website = Entry(width=30,
                       bg="white",
                       fg="black",
                       highlightthickness=0,
-                      insertbackground="black")
+                      insertbackground="black",
+                      )
 text1_Website.grid(column=1, row=1)
 text1_Website.focus_set()
 
@@ -75,7 +84,8 @@ text2_Email = Entry(width=30,
                     bg="white",
                     fg="black",
                     highlightthickness=0,
-                    insertbackground="black")
+                    insertbackground="black",
+                    )
 text2_Email.grid(column=1, row=2)
 text2_Email.focus_set()
 
@@ -103,7 +113,8 @@ button2_add = Button(width=20,
                      fg="black",
                      highlightthickness=0,
                      highlightcolor="white",
-                     highlightbackground="white")
+                     highlightbackground="white",
+                     command=add)
 
 button2_add.grid(column=1, row=5)
 
